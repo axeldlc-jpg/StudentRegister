@@ -4,10 +4,14 @@
  */
 package com.mycompany.studentregister;
 
+
+
 /**
  *
  * @author Axel
  */
 public class Registro {
-    
+   
+//profe chevere ojala me apruebe
+   
 }
