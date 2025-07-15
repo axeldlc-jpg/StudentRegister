@@ -58,7 +58,7 @@ public class Main {
                     String ff = sc.nextLine();
                     int id = gestor.getListaTareas().size() + 1;
                     gestor.agregarTarea(new Tarea(id, titulo, curso, fi, ff));
-                    System.out.println("✅ Tarea agregada.");
+                    System.out.println("Tarea agregada.");
                     break;
                 case 2:
                     ArrayList<Tarea> tareas = gestor.obtenerTareasPorCurso(curso);
@@ -71,7 +71,7 @@ public class Main {
                     System.out.print("ID de tarea a eliminar: ");
                     int idEliminar = sc.nextInt(); sc.nextLine();
                     gestor.eliminarTarea(idEliminar);
-                    System.out.println("✅ Tarea eliminada.");
+                    System.out.println("Tarea eliminada.");
                     break;
                 case 4:
                     return;
@@ -94,7 +94,7 @@ public class Main {
             System.out.println("\n1. Ver tareas");
             System.out.println("2. Marcar tarea como hecha");
             System.out.println("3. Volver al menu principal");
-            System.out.print("Opción: ");
+            System.out.print("Opcion: ");
             int op = sc.nextInt(); sc.nextLine();
 
             switch (op) {
