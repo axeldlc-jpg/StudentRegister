@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.studentregister;
 
 /**
@@ -16,12 +12,14 @@ public class Tarea {
     private String curso;
     private String fechaInicio;
     private String fechaFin;
+    private String contenido;
     private boolean completada;
 
-    public Tarea(int id, String titulo, String curso, String fechaInicio, String fechaFin) {
+    public Tarea(int id, String titulo, String curso, String fechaInicio, String fechaFin, String contenido) {
         this.id = id;
         this.titulo = titulo;
         this.curso = curso;
+        this.contenido = contenido;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.completada = false;
@@ -30,6 +28,7 @@ public class Tarea {
     public int getId() { return id; }
     public String getTitulo() { return titulo; }
     public String getCurso() { return curso; }
+    public String getContenido() {return contenido;}
     public String getFechaInicio() { return fechaInicio; }
     public String getFechaFin() { return fechaFin; }
     public boolean isCompletada() { return completada; }

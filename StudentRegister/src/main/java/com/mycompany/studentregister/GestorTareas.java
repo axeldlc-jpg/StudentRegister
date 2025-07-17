@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class GestorTareas {
     
-    private ArrayList<Tarea> listaTareas;
+    private ArrayList<Tarea> listaTareas = new ArrayList<>();
 
     public GestorTareas() {
         listaTareas = new ArrayList<>();

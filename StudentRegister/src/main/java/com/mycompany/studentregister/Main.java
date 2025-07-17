@@ -41,27 +41,29 @@ public class Main {
             System.out.println("\n1. Crear tarea");
             System.out.println("2. Ver tareas");
             System.out.println("3. Eliminar tarea");
-            System.out.println("4. Volver al menú principal");
-            System.out.print("Opción: ");
+            System.out.println("4. Volver al menu principal");
+            System.out.print("Opcion: ");
             int op = sc.nextInt(); sc.nextLine();
 
             switch (op) {
                 case 1:
                     System.out.print("Titulo: ");
                     String titulo = sc.nextLine();
+                    System.out.println("Contenido de la tarea: ");
+                    String contenido = sc.nextLine();
                     System.out.print("Fecha inicio (YYYY-MM-DD): ");
                     String fi = sc.nextLine();
                     System.out.print("Fecha fin (YYYY-MM-DD): ");
                     String ff = sc.nextLine();
                     int id = gestor.getListaTareas().size() + 1;
-                    gestor.agregarTarea(new Tarea(id, titulo, curso, fi, ff));
+                    gestor.agregarTarea(new Tarea(id, titulo, curso, fi, ff, contenido));
                     System.out.println("Tarea agregada.");
                     break;
                 case 2:
                     ArrayList<Tarea> tareas = gestor.obtenerTareasPorCurso(curso);
                     if (tareas.isEmpty()) System.out.println("No hay tareas.");
                     for (Tarea t : tareas) {
-                        System.out.println("ID: " + t.getId() + " | " + t.getTitulo() + " | " + t.getFechaInicio() + " - " + t.getFechaFin());
+                        System.out.println("ID: " + t.getId() + " | " + t.getTitulo() + " | " +  t.getContenido() + " | " + t.getFechaInicio() + " - " + t.getFechaFin());
                     }
                     break;
                 case 3:
@@ -102,15 +104,15 @@ public class Main {
                         break;
                     }
                     for (Tarea t : tareas) {
-                        String estado = estudiante.getTareasCompletadas().contains(t.getId()) ? "✅ Hecha" : "❌ Pendiente";
-                        System.out.println("ID: " + t.getId() + " | " + t.getTitulo() + " | " + estado);
+                        String estado = estudiante.getTareasCompletadas().contains(t.getId()) ? "Hecha" : "Pendiente";
+                        System.out.println("ID: " + t.getId() + " | " + t.getTitulo() + " | " + t.getContenido() + " | " + estado);
                     }
                 }
                 case 2 -> {
                     System.out.print("ID de la tarea a marcar como hecha: ");
                     int id = sc.nextInt(); sc.nextLine();
                     gestor.marcarTareaComoHecha(id, estudiante);
-                    System.out.println("✅ Marcada como hecha.");
+                    System.out.println("Marcada como hecha.");
                 }
                 case 3 -> {
                     return;
